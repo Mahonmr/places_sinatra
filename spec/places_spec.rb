@@ -4,9 +4,11 @@ require('pry')
 
 describe("#location") do
   it("will save to class variable") do
+    Place.clear
     test_location = Place.new("Salem")
     test_location.save
     expect(Place.all).to(eq([test_location]))
+    Place.clear
   end
 
   it("will return location") do
